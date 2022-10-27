@@ -1,0 +1,148 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="fluig-style-guide">
+<form name="form" role="form">
+<div class="panel panel-primary" id="panelSolicitante">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Solicitação</h3>
+                </div>
+
+                <div class="form-group">
+                    <label>CNPJ - Matriz</label>
+                    <select name="cnpjmatriz" class="form-control">
+                        <option value="valor1">São Paulo - 620441510001-07</option>
+                        <option value="valor2">Nova Lima - 620441510004-41</option>
+                        <option value="valor3">Porto alegre - 620441510005-22</option>
+                        <option value="valor4">Recife - 620441510007-94</option>
+                        <option value="valor5">Brasilia - 620441510011-70</option>
+                        <option value="valor6">Curitiba - 620441510009-56</option>
+                        <option value="valor7">Campinas - 620441510004-41</option>
+                        <option value="valor8">Salvador - 620441510014-13</option>
+                        <option value="valor9">Goiania - 620441510008-75</option>
+                        <option value="valor10">Uberlandia - 620441510013-32</option>
+                        <option value="valor11">Ribeirão Preto - 620441510012-51</option>
+                        <option value="valor12">Joinville - 620441510016-85</option>
+                        <option value="valor13">Campo Grande - 620441510015-02</option>
+                        <option value="valor14">Fortaleza - 620441510017-66</option>
+                        <option value="valor15">Rio de Janeiro - 620441510018-47</option>
+                        <option value="valor16">Vitoria - 620441510019-28</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu e-mail"
+                        name="email">
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu Nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="cpf">CPF</label>
+                    <input type="text" placeholder="Digite Seu CPF" name="cpf" class="form-control" mask="000.000.000-00">
+                </div>
+                <div class="form-group">
+                    <label for="nome">Cargo</label>
+                    <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Digite seu Cargo">
+                </div>
+                <div class="form-group">
+                    <label for="nome">Departamento</label>
+                    <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Digite seu departamento">
+                </div>
+                <div class="form-group">
+                    <label for="cpf">Centro de Custo</label>
+                    <input type="text" name="centroc" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Forma de pagamento</label>
+                    <select name="pagamento" class="form-control">
+                        <option value="pix">PIX</option>
+                        <option value="itau">Itáu</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Tipo de chave</label>
+                    <select name="chavepix" class="form-control">
+                        <option value="pix">CPF/CNPJ</option>
+                        <option value="cnpj">Aleatória</option>
+                        <option value="celular">Celular</option>
+                        <option value="email">E-mail</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="cpix">Chave PIX</label>
+                    <input type="text" class="form-control" id="cpix" name="cpix" placeholder="Digite sua chave Pix">
+
+                </div>
+
+
+
+                <div>
+                    <div class="form-group">
+                        <label for="nome">Agência</label>
+                        <input type="text" class="form-control" id="agencia" name="agencia" mask="0000" placeholder="Digite seu departamento">
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <label for="nome">Conta corrente</label>
+                        <input type="text" class="form-control" id="ccorrente" name="ccorrente" mask="00000-0" placeholder="Digite seu departamento">
+                    </div>
+                </div>
+
+
+                <div>
+                    <table tablename="solicitacao" addbuttonlabel="Criar nova despesa" class="table">
+                        <thead>
+                            <tr>
+                                <td><strong>Despesa</strong></td>
+                                <td><strong>Descrição da Despesa</strong></td>
+                                <td><strong>Valor da Despesa</strong></td>
+                                <td><strong>Data da Despesa</strong></td>
+                                <td><strong>Código contabil</strong></td>
+                                <td><strong>Anexo da Despesa</strong></td>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="form-group">
+                                    <select name="tipo_despesa" class="form-control">
+                                        <option value="valor1">Refeições</option>
+                                        <option value="valor2">Transporte</option>
+                                        <option value="valor3">Pedágio</option>
+                                        <option value="valor4">Outros</option>
+
+                                    </select>
+
+                                </td>
+                                <td class="form-group"><input type="text" name="ddespesa" id="ddespesa" class="form-control"></td>
+                                <td class="form-group"><input type="number" name="vldespesa" id="vldespesa" class="form-control"></td>
+                                <td class="form-group"><input type="date" name="dtdespesa" id="dtdespesa" class="form-control"></td>
+                                <td class="form-group"><input type="text" name="codigoc" id="codigoc" class="form-control"></td>
+                                <td class="form-group"><input type="file" name="anexo" id="anexo" class="form-control"></td>
+
+                            </tr>
+                        </tbody>
+
+                   </table>
+
+
+
+                </div>
+            </div>
+</form>
+</div>
+</body>
+</html>
